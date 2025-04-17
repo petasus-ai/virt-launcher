@@ -5,7 +5,7 @@ ENV ARCH=${TARGETARCH:-amd64}
 
 # Copy both architecture-specific folders into temporary locations.
 # In your source, organize the files as:
-COPY ovmf-250221/${ARCH}/ /tmp/${ARCH}/
+COPY ovmf-240524/${ARCH}/ /tmp/${ARCH}/
 
 # Based on the current architecture, copy the proper files to the correct destination.
 # For amd64 (x86) use "/usr/share/edk2/ovmf"
