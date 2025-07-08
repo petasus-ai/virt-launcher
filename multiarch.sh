@@ -5,7 +5,7 @@ set -o pipefail
 
 KUBE_ROOT=$(dirname "${BASH_SOURCE[0]}")/..
 
-TAG=${TAG:-v1.4.0}
+TAG=${TAG:-v1.5.2}
 REPO=${REPO:-quay.io/edgestack}
 PUSH=${PUSH:-}
 
