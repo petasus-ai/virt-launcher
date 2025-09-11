@@ -26,4 +26,4 @@ ${CONTAINER_CLI} ${CONTAINER_BUILDER} \
   --platform ${PLATFORMS} \
   ${PUSH} \
   -f ./Dockerfile \
-  -t "${REPO}"/virt-launcher:"${TAG}" .
+  -t "${REPO}"/virt-launcher-mod:"${TAG}" .
