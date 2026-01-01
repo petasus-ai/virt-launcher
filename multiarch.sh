@@ -5,7 +5,7 @@ set -o pipefail
 
 KUBE_ROOT=$(dirname "${BASH_SOURCE[0]}")/..
 
-TAG=${TAG:-v1.4.0}
+TAG=${TAG:-v1.7.0}
 REPO=${REPO:-quay.io/edgestack}
 PUSH=${PUSH:-}
 
@@ -26,4 +26,4 @@ ${CONTAINER_CLI} ${CONTAINER_BUILDER} \
   --platform ${PLATFORMS} \
   ${PUSH} \
   -f ./Dockerfile \
-  -t "${REPO}"/virt-launcher:"${TAG}" .
+  -t "${REPO}"/virt-launcher-mod:"${TAG}" .
