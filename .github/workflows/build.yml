@@ -27,17 +27,5 @@ jobs:
         run: |
           echo "$QUAY_PW_SECRET" | docker login quay.io -u edgestack --password-stdin
 
-      - name: Build and Push Docker Image (Production - Master)
-        if: github.ref_name == 'master'
-        run: |
-          DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build --push \
-            --platform linux/arm64/v8,linux/amd64 \
-            --tag quay.io/edgestack/virt-launcher:latest .
-
-      - name: Build and Push Docker Image (Production - Other Branch)
-        if: github.ref_name != 'master'
-        run: |
-          DOCKER_CLI_EXPERIMENTAL=enabled docker buildx build --push \
-            --platform linux/arm64/v8,linux/amd64 \
-            --tag quay.io/edgestack/virt-launcher:${{ github.ref_name }} .
-
+      - name: Build multiarch docker image and push
+        run: ./multiarch.sh
