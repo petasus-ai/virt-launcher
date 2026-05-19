@@ -21,9 +21,12 @@ fi
 # supported platforms
 PLATFORMS=linux/amd64,linux/arm64
 
+# Always re-fetch the FROM base image so a re-pushed upstream
+# virt-launcher tag is picked up instead of a stale cached layer.
 # shellcheck disable=SC2086 # intended splitting of CONTAINER_BUILDER
 ${CONTAINER_CLI} ${CONTAINER_BUILDER} \
   --platform ${PLATFORMS} \
+  --pull \
   ${PUSH} \
   -f ./Dockerfile \
   -t "${REPO}"/virt-launcher-mod:"${TAG}" .

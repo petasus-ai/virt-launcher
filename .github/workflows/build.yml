@@ -2,6 +2,7 @@ name: Build and Push Docker Image
 
 on:
   push: {}  # Trigger on every push; branch filtering is done within the steps
+  workflow_dispatch: {}  # Allow manual trigger (e.g. rebuild after the upstream virt-launcher base image was re-pushed)
 
 jobs:
   production:
