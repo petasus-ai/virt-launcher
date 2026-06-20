@@ -1,4 +1,4 @@
-FROM quay.io/kubevirt/virt-launcher:v1.8.2
+FROM quay.io/kubevirt/virt-launcher:v1.8.4
 
 ARG TARGETARCH
 ENV ARCH=${TARGETARCH:-amd64}
